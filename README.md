@@ -28,6 +28,11 @@ npm run start:prod
 
 ## Documentación de Endpoints
 
+### `API URL
+```https
+https://prueba-tecnica-gj4il5q5n-daniels-projects-6c98c0df.vercel.app/
+```
+
 ### `GET /scraper/:url`
 **Descripción:** Realiza scraping en la URL proporcionada y devuelve los datos extraídos. 
 
@@ -146,4 +151,4 @@ El proceso de web scraping implementado en esta API sigue los siguientes pasos:
 ## Contacto
 - Autor: Jesús Daniel Chuquillanqui Sevillano
 - Repositorio: https://github.com/DanielCS13/jesus-daniel-chuquillanqui-sevillano-prueba-tecnica-cvmatcher-back
-- API en Vercel: Actualizar
+- API en Vercel: https://prueba-tecnica-gj4il5q5n-daniels-projects-6c98c0df.vercel.app/
