@@ -33,7 +33,7 @@ npm run start:prod
 https://prueba-tecnica-gj4il5q5n-daniels-projects-6c98c0df.vercel.app/
 ```
 
-### `GET /scraper/:url`
+### `GET /scraper`
 **Descripción:** Realiza scraping en la URL proporcionada y devuelve los datos extraídos. 
 
 **Parámetros de consulta:**
