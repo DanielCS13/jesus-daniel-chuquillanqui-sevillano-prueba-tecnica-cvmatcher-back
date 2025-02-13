@@ -5,6 +5,7 @@ import { lastValueFrom } from 'rxjs';
 import { DateService } from 'src/date/date.service';
 import { SupabaseService } from 'src/supabase/supabase.service';
 import { ROLES } from 'src/auth/roles.decorator';
+import { JobOffer } from './jobOffer.interface';
 
 @Injectable()
 export class ScrappingService {
@@ -61,5 +62,27 @@ export class ScrappingService {
         ? { business, locationSpecific, publishedDate }
         : {}),
     };
+  }
+
+  async getStoredData(role: string): Promise<Partial<JobOffer>[]> {
+    const data = await this.supabaseService.getData<JobOffer>('job-offer');
+
+    return data.map(
+      ({
+        title,
+        aditionalInformation,
+        business,
+        locationSpecific,
+        publishedDate,
+      }) => ({
+        title,
+        ...(role === ROLES.PRO || role === ROLES.ADMIN
+          ? { aditionalInformation }
+          : {}),
+        ...(role === ROLES.ADMIN
+          ? { business, locationSpecific, publishedDate }
+          : {}),
+      }),
+    );
   }
 }

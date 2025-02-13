@@ -24,4 +24,14 @@ export class SupabaseService {
     if (error) throw new Error(error.message);
     return result;
   }
+
+  async getData<T>(tableName: string): Promise<T[]> {
+    const { data, error } = await this.supabase.from(tableName).select('*');
+
+    if (error) {
+      throw new Error(`Error obteniendo datos de Supabase: ${error.message}`);
+    }
+
+    return data as T[]; // Cast seguro
+  }
 }

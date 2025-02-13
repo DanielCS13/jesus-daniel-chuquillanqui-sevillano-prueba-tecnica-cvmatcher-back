@@ -17,4 +17,11 @@ export class ScrappingController {
   ) {
     return this.scrappingService.scrapeWebsite(url, req.user.role);
   }
+
+  @Get('stored-data')
+  @Roles(ROLES.ADMIN, ROLES.PRO, ROLES.USER)
+  @UseGuards(JwtAuthGuard, RolesGuard)
+  async getStoredData(@Request() req: { user: { role: string } }) {
+    return this.scrappingService.getStoredData(req.user.role);
+  }
 }

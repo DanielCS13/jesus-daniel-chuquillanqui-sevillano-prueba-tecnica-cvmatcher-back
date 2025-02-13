@@ -28,7 +28,7 @@ npm run start:prod
 
 ## Documentación de Endpoints
 
-### `GET /scraper`
+### `GET /scraper/:url`
 **Descripción:** Realiza scraping en la URL proporcionada y devuelve los datos extraídos. 
 
 **Parámetros de consulta:**
@@ -51,6 +51,64 @@ Authorization: Bearer <token>
   "locationSpecific": "Ubicación específica (solo visible para ADMIN)",
   "publishedDate": "Fecha de publicación (solo visible para ADMIN)"
 }
+```
+
+### `GET /scraper/stored-data`
+**Descripción:** Obtiene los datos almacenados en Supabase y los filtra según el rol del usuario.
+
+**Autenticación:** Requiere un token JWT válido y un rol de usuario (`ADMIN`, `PRO`, `USER`).
+
+**Ejemplo de solicitud:**
+```http
+GET /scraper/stored-data
+Authorization: Bearer <token>
+```
+
+**Ejemplo de respuesta:**
+Para un usuario con rol `USER`.
+```json
+[
+  {
+    "title": "Oferta de trabajo 1"
+  },
+  {
+    "title": "Oferta de trabajo 2"
+  }
+]
+```
+
+Para un usuario con rol `PRO`.
+```json
+[
+  {
+    "title": "Oferta de trabajo 1",
+    "aditionalInformation": "Requisitos y detalles adicionales"
+  },
+  {
+    "title": "Oferta de trabajo 2",
+    "aditionalInformation": "Requisitos y detalles adicionales"
+  }
+]
+```
+
+Para un usuario con rol `ADMIN`.
+```json
+[
+  {
+    "title": "Oferta de trabajo 1",
+    "aditionalInformation": "Requisitos y detalles adicionales",
+    "business": "Empresa XYZ",
+    "locationSpecific": "Lima, Perú",
+    "publishedDate": "2024-09-02"
+  },
+  {
+    "title": "Oferta de trabajo 2",
+    "aditionalInformation": "Requisitos y detalles adicionales",
+    "business": "Empresa ABC",
+    "locationSpecific": "Buenos Aires, Argentina",
+    "publishedDate": "2024-09-01"
+  }
+]
 ```
 
 ## Tokens de Prueba
@@ -86,6 +144,6 @@ El proceso de web scraping implementado en esta API sigue los siguientes pasos:
 6. Retornar los datos en formato JSON según los permisos del usuario.
 
 ## Contacto
-Autor: Jesús Daniel Chuquillanqui Sevillano
-Repositorio: https://github.com/DanielCS13/jesus-daniel-chuquillanqui-sevillano-prueba-tecnica-cvmatcher-back
-API en Vercel: Actualizar
+- Autor: Jesús Daniel Chuquillanqui Sevillano
+- Repositorio: https://github.com/DanielCS13/jesus-daniel-chuquillanqui-sevillano-prueba-tecnica-cvmatcher-back
+- API en Vercel: Actualizar
