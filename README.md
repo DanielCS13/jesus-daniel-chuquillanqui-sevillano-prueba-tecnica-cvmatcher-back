@@ -1,7 +1,7 @@
 # Proyecto NestJS - Web Scraping API
 
 ## Descripción
-Este proyecto es una API construida con NestJS que implementa técnicas de web scraping para extraer información de diversas fuentes en la web. La API protege el acceso mediante autenticación JWT y roles de usuario.
+Este proyecto es una API construida con NestJS que implementa técnicas de web scraping para extraer información de Laborum. La API protege el acceso mediante autenticación JWT y roles de usuario.
 
 ## Instalación y ejecución
 
@@ -53,6 +53,29 @@ Authorization: Bearer <token>
 }
 ```
 
+## Tokens de Prueba
+Estos tokens pueden utilizarse para probar la API con diferentes roles:
+
+- **Admin:**
+  ```
+  eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNTE2MjM5MDIyfQ.HXdcgO56yFXViBolaA2tOvtDtiV9uPnNBqZHygF7kpI
+  ```
+- **Pro:**
+  ```
+  eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwicm9sZSI6InBybyIsImlhdCI6MTUxNjIzOTAyMn0.RDElf3xubgRdy-gPFY-46unRLbsTz0qTvtXA_yJmfNY
+  ```
+- **User:**
+  ```
+  eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwicm9sZSI6InVzZXIiLCJpYXQiOjE1MTYyMzkwMjJ9._YQB2RpRLoT5xPCKI8xbYds9EBwnF4odLprpyABQDLM
+  ```
+
+## URLs de prueba
+Puedes probar la API con las siguientes URLs de ejemplo:
+
+- https://www.laborum.pe/job/Caja-de-Pensiones-Militar-Policial/ASISTENTE-DE-TESORERIA-DE-CONT/6792051f025c7277f624b363
+- https://www.laborum.pe/job/Caja-de-Pensiones-Militar-Policial/ANALISTA-DE-CALIFICACION-PREVI/6793569e025c7277f62511c9
+- https://www.laborum.pe/job/Caja-de-Pensiones-Militar-Policial/PRACTICANTE-PROFESIONAL-GERENC/6792051f025c7277f624b39b
+
 ## Descripción del Proceso de Web Scraping
 El proceso de web scraping implementado en esta API sigue los siguientes pasos:
 1. Recibir la URL como parámetro en la consulta.
@@ -63,6 +86,6 @@ El proceso de web scraping implementado en esta API sigue los siguientes pasos:
 6. Retornar los datos en formato JSON según los permisos del usuario.
 
 ## Contacto
-Autor: [Tu Nombre]
-Repositorio: [Enlace al repositorio]
-
+Autor: Jesús Daniel Chuquillanqui Sevillano
+Repositorio: https://github.com/DanielCS13/jesus-daniel-chuquillanqui-sevillano-prueba-tecnica-cvmatcher-back
+API en Vercel: Actualizar
